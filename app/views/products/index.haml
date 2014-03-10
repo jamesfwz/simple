@@ -5,8 +5,10 @@
     %th Name
     %th Description
     %th Price
+    %th Action
   - @products.each do |product|
     %tr
       %td= product.name
       %td= product.description
       %td= number_to_currency(product.price)
+      %td= link_to "Update Product", edit_product_path(product)

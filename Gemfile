@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem "capybara"
+  gem 'selenium-webdriver'
   gem "factory_girl_rails"
   gem 'awesome_print'
 end

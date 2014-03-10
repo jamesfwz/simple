@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Create Product Workflow' do
-  it 'allows user to create a product' do
+describe 'Manage Product Workflow', js: true do
+  it 'allows user to CRUD a product' do
     visit '/products'
     click_on 'Create Product'
     page.should have_content 'Description'
@@ -12,5 +12,11 @@ describe 'Create Product Workflow' do
     click_on 'Submit'
 
     page.should have_content 'Ruby Book #2'
+
+    click_on 'Update Product'
+    fill_in 'Name',        with: 'Ruby Book #3'
+    click_on 'Submit'
+
+    page.should have_content 'Ruby Book #3'
   end
 end
