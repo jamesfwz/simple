@@ -1,6 +1,6 @@
 Simple::Application.routes.draw do
 
-  resources :products, only: [:create, :new]
+  resources :products, only: [:create, :new, :index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
