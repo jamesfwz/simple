@@ -52,4 +52,18 @@ describe ProductsController do
       response.should render_template :new
     end
   end
+
+  describe '#update' do
+    def do_request
+      patch :update, id: product.id, product: {name: 'New title'}
+    end
+
+    let!(:product) { create(:product) }
+
+    it 'should update the product' do
+      do_request
+      product.reload.name.should == 'New title'
+      response.should redirect_to products_url
+    end
+  end
 end
