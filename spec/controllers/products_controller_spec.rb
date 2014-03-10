@@ -10,6 +10,7 @@ describe ProductsController do
 
     it 'should save the product' do
       expect { do_request }.to change(Product, :count).by(1)
+      response.should redirect_to products_url
     end
   end
 

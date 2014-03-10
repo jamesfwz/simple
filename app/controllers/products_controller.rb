@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(create_params)
     product.save
-    render text: 'Success'
+    redirect_to products_url
   end
 
   private

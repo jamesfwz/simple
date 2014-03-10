@@ -1,0 +1,12 @@
+= link_to "Create Product", new_product_path
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Price
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.description
+      %td= number_to_currency(product.price)
