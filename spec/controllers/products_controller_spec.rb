@@ -12,4 +12,11 @@ describe ProductsController do
       expect { do_request }.to change(Product, :count).by(1)
     end
   end
+
+  describe '#new' do
+    it 'should display the product form' do
+      get :new
+      response.should render_template :new
+    end
+  end
 end

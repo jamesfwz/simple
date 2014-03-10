@@ -1,8 +1,12 @@
 class ProductsController < ApplicationController
+  def new
+    @product = Product.new
+  end
+
   def create
     product = Product.new(create_params)
     product.save
-    render text: ''
+    render text: 'Success'
   end
 
   private
