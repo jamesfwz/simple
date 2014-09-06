@@ -7,12 +7,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def create
-    product = Product.new(create_params)
-    product.save
-    redirect_to products_url
-  end
-
   def edit
     @product = Product.find(product_id)
   end
@@ -20,6 +14,12 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(product_id)
     product.update(update_params)
+    redirect_to products_url
+  end
+
+  def create
+    product = Product.new(create_params)
+    product.save
     redirect_to products_url
   end
 
