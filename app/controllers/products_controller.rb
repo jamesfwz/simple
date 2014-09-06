@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new(create_params)
-    product.save
     redirect_to products_url
   end
 
